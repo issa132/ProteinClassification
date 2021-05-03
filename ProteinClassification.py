@@ -392,7 +392,7 @@ history3 = model1.fit(
 
 
 # saving model weights.
-model1.save_weights('C:\\Users\\BABAN CHAWAI\\weights\\model3.h5')
+model3.save_weights('C:\\Users\\BABAN CHAWAI\\weights\\model3.h5')
 
 
 plot_history(history3)
@@ -408,12 +408,12 @@ display_model_score(model3,
 # 4eme methode
 x_output1 = Dense(1000, activation='sigmoid')(x)
 x_output2 = Dense(1000, activation='sigmoid')(x_output1)
-model3 = Model(inputs=x_input, outputs=x_output2)
-model3.add(layers.Dense(1000, input_dim=input_dim, activation='relu'))
-model3.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-model3.summary()
+model4 = Model(inputs=x_input, outputs=x_output2)
+model4.add(layers.Dense(1000, input_dim=input_dim, activation='relu'))
+model4.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+model4.summary()
 
-history3 = model1.fit(
+history4 = model1.fit(
     train_pad, y_train,
     epochs=50, batch_size=256,
     validation_data=(val_pad, y_val),
@@ -423,13 +423,13 @@ history3 = model1.fit(
 
 
 # saving model weights.
-model1.save_weights('C:\\Users\\BABAN CHAWAI\\weights\\model3.h5')
+model4.save_weights('C:\\Users\\BABAN CHAWAI\\weights\\model4.h5')
 
 
-plot_history(history3)
+plot_history(history4)
 
 
-display_model_score(model3,
+display_model_score(model4,
     [train_pad, y_train],
     [val_pad, y_val],
     [test_pad, y_test],
